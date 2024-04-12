@@ -63,9 +63,9 @@ spec:
                 - name: KEEP_BACKUP_FILES
                   value: "{{ .Values.backup.keepBackupFiles | default true }}"
                 - name: PAGE_CACHE
-                  value: {{ .Values.backup.pageCache | trim }}
+                  value: {{ .Values.backup.pageCache | trim | quote }}
                 - name: HEAP_SIZE
-                  value: {{ .Values.backup.heapSize | trim }}
+                  value: {{ .Values.backup.heapSize | trim | quote }}
                 - name: INCLUDE_METADATA
                   value: "{{ .Values.backup.includeMetadata | default "all" | trim }}"
                 - name: PARALLEL_RECOVERY
